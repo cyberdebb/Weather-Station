@@ -1,39 +1,39 @@
 # ESP32
 ![image-removebg-preview (1)](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/9e9e1087-d345-4934-84ed-f355491677b7)
 
-O [ESP32 DevKit V1](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) é uma das placas de desenvolvimento criadas para avaliar o módulo ESP-WROOM-32. Baseia-se no microcontrolador ESP32 que inclui suporte a Wifi, Bluetooth, Ethernet e baixo consumo de energia, tudo em um único chip.
+The [ESP32 DevKit V1](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) is one of the development boards created to evaluate the ESP-WROOM-32 module. It is based on the ESP32 microcontroller, which includes support for Wi-Fi, Bluetooth, Ethernet, and low power consumption, all in a single chip.
 
-O ESP32 já possui antena integrada e balun RF, amplificador de potência, amplificadores de baixo ruído, filtros e módulo de gestão de energia. A solução completa ocupa a menor quantidade possível de espaço em placa de circuito impresso. Esta placa utiliza chips Wi-Fi e Bluetooth de modo duplo 2.4 GHz da TSMC com tecnologia de baixo consumo de 40nm, oferecendo as melhores propriedades de potência e RF, o que é seguro, confiável e escalável para uma variedade de aplicações.
+The ESP32 already features an integrated antenna and RF balun, power amplifier, low-noise amplifiers, filters, and a power management module. This complete solution occupies the smallest possible amount of printed circuit board space. The board uses 2.4 GHz dual-mode Wi-Fi and Bluetooth chips from TSMC built with low-power 40 nm technology, offering excellent power and RF characteristics, making it safe, reliable, and scalable for a wide range of applications.
 
-### Layout do Flash
-O flash interno do módulo ESP32 é organizado em uma única área de flash com páginas de 4096 bytes cada. O flash começa no endereço 0x00000, mas muitas áreas são reservadas para o SDK IDF do Esp32. Existem dois layouts diferentes baseados na presença de suporte BLE.
+### Flash Layout
+The internal flash of the ESP32 module is organized as a single flash area with 4096-byte pages each. The flash starts at address 0x00000, but many areas are reserved for the ESP32 IDF SDK. There are two different layouts depending on the presence of BLE support.
 
-### Energia
-A energia para o ESP32 DevKit V1 é fornecida através do conector USB Micro B a bordo ou diretamente pelo pino "VIN". A fonte de energia é selecionada automaticamente.
+### Power Supply
+Power for the ESP32 DevKit V1 is supplied through the onboard USB Micro-B connector or directly via the “VIN” pin. The power source is selected automatically.
 
-O dispositivo pode operar com uma fonte de alimentação externa de 6 a 20 volts. Se usar mais de 12V, o regulador de tensão pode superaquecer e danificar o dispositivo. A faixa recomendada é de 7 a 12 volts.
+The device can operate using an external power supply ranging from 6 to 20 volts. If more than 12 V is used, the voltage regulator may overheat and damage the device. The recommended range is between 7 and 12 volts.
 
-### Conectar, Registrar, Virtualizar e Programar
-O ESP32 DevKit V1 vem com um chip serial-para-USB a bordo que permite programar e abrir o UART do módulo ESP32. Dependendo do seu sistema (Mac ou Windows), podem ser necessários drivers que podem ser baixados da página de documentação oficial da Espressif. Em sistemas Linux, o DevKit V1 deve funcionar imediatamente.
+### Connect, Register, Virtualize, and Program
+The ESP32 DevKit V1 comes with an onboard USB-to-serial chip that allows programming and UART access to the ESP32 module. Depending on your operating system (Mac or Windows), drivers may be required and can be downloaded from Espressif’s official documentation page. On Linux systems, the DevKit V1 should work out of the box.
 
 ![image](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/b46d96a6-a364-44a7-8699-3bbed1ecb281)
 
-## Especificações
-| INFORMAÇÃO                          | ESP32                                         |
-|-------------------------------------|-----------------------------------------------|
-| PROCESSADOR                         | Tensilica 32-bit Single-/Dual-core CPU Xtensa LX6 |
-| TENSÃO DE OPERAÇÃO                  | 3.3V                                          |
-| TENSÃO DE ENTRADA                   | 7-12V                                         |
-| PINOS DE I/O DIGITAL (DIO)          | 25                                            |
-| PINOS DE ENTRADA ANALÓGICA (ADC)    | 6                                             |
-| PINOS DE SAÍDA ANALÓGICA (DAC)      | 2                                             |
-| UARTs                               | 3                                             |
-| SPIs                                | 2                                             |
-| I2Cs                                | 3                                             |
-| MEMÓRIA FLASH                       | 4 MB                                          |
-| MEMÓRIA SRAM                        | 520 KB                                        |
-| VELOCIDADE DO CLOCK                 | 240 MHz                                       |
-| WI-FI                               | IEEE 802.11 b/g/n/e/i                         |
-| CARACTERÍSTICAS DE WI-FI            | Integrated TR switch, balun, LNA, power amplifier and matching network |
-| SEGURANÇA WI-FI                     | WEP or WPA/WPA2 authentication, or open networks |
-| DIMENSÕES                           | 51.5x29x5mm                                   |
+## Specifications
+| INFORMATION                         | ESP32                                           |
+|------------------------------------|------------------------------------------------|
+| PROCESSOR                          | Tensilica 32-bit Single-/Dual-core Xtensa LX6 CPU |
+| OPERATING VOLTAGE                  | 3.3 V                                          |
+| INPUT VOLTAGE                      | 7–12 V                                         |
+| DIGITAL I/O PINS (DIO)             | 25                                             |
+| ANALOG INPUT PINS (ADC)            | 6                                              |
+| ANALOG OUTPUT PINS (DAC)           | 2                                              |
+| UARTs                              | 3                                              |
+| SPIs                               | 2                                              |
+| I2Cs                               | 3                                              |
+| FLASH MEMORY                       | 4 MB                                           |
+| SRAM                               | 520 KB                                         |
+| CLOCK SPEED                        | 240 MHz                                        |
+| WI-FI                              | IEEE 802.11 b/g/n/e/i                          |
+| WI-FI FEATURES                     | Integrated TR switch, balun, LNA, power amplifier, and matching network |
+| WI-FI SECURITY                     | WEP or WPA/WPA2 authentication, or open networks |
+| DIMENSIONS                         | 51.5 × 29 × 5 mm                               |
