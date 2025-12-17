@@ -32,11 +32,11 @@ This section describes in detail the components and processes used in the constr
 
 ### Characterization of the Embedded System
 
-- [**ESP32**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/ESP32): A microcontroller module with integrated Wi-Fi and Bluetooth, ideal for IoT applications.
-- [**DHT11**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/DHT11): Temperature and humidity sensor, used for basic environmental measurements.
-- [**Pluviometer**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Pluviometro): A device used to measure the amount of precipitation.
-- [**Anemometer Arduino SV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Anemometro): A sensor used to measure wind speed.
-- [**Wind Direction Indicator Arduino DV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Ind_Direcao_Vento): A sensor used to determine wind direction.
+- [**ESP32**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensors/ESP32): A microcontroller module with integrated Wi-Fi and Bluetooth, ideal for IoT applications.
+- [**DHT11**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensors/DHT11): Temperature and humidity sensor, used for basic environmental measurements.
+- [**Pluviometer**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensors/Pluviometer): A device used to measure the amount of precipitation.
+- [**Anemometer Arduino SV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensors/Anemometer): A sensor used to measure wind speed.
+- [**Wind Direction Indicator Arduino DV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensors/Wind_Direction_Indicator): A sensor used to determine wind direction.
 
 > The Anemometer and the Wind Direction Indicator for Weather Station are usually found together: Anemometer + Wind Direction Indicator for Weather Station - SVDV10
 ---
