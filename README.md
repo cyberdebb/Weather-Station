@@ -1,145 +1,158 @@
-# Estação Metereológica
-## 1. Introdução
+# Weather Station (hardware)
 
-Este projeto visa desenvolver uma solução integrada para o monitoramento de condições meteorológicas, utilizando tecnologias de ponta em hardware e comunicações. Neste repositório, focaremos exclusivamente na montagem do hardware e na integração do sistema embarcado com um servidor remoto, detalhando cada componente usado, sua configuração e a interconexão necessária para a transmissão eficiente de dados.
+This project aims to develop an integrated solution for monitoring meteorological conditions, using state-of-the-art hardware and communication technologies. In this repository, we focus exclusively on the hardware assembly and the integration of the embedded system with a remote server, detailing each component used, its configuration, and the necessary interconnections for efficient data transmission.
 
-Para aqueles interessados na implementação completa, incluindo o servidor, interfaces de usuário, backend, banco de dados e frontend, esses aspectos são abordados em um repositório separado. Essa divisão permite uma especialização mais aprofundada em cada área e facilita o gerenciamento e a colaboração no desenvolvimento do projeto.
+For those interested in the complete implementation—including the server, user interfaces, backend, database, and frontend—these aspects are covered in a separate repository. This separation allows for deeper specialization in each area and facilitates project management and collaboration during development.
 
-[Link para o repositório](https://github.com/Ludmilahttps/EstacaoMeteorologica)
+[Link to the repository](https://github.com/Ludmilahttps/EstacaoMeteorologica)
 
-### Participantes 
+---
+
+## Participants 
 - Augusto Daleffe
 - Ludmila Silveira
 - Débora Castro
 - Eduardo Swarowsky
 - Vinicius Muchulski
 
-### Diagrama de comunicação
-![diagrama_de_comunicacao](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/a105d673-0c97-417b-b6c3-62494302f3ab)
+---
 
-## 2. Materiais e métodos 
+## Communication Diagram
+![communication diagram](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/a105d673-0c97-417b-b6c3-62494302f3ab)
 
-> Nota: Neste projeto, não foi utilizado o sensor de temperatura e pressão BMP280 por problemas na utilização do material. Porém, o hardware e o software permitem sua utilização para integração na estação meteorológica
+---
 
-Esta seção descreve detalhadamente os componentes e processos utilizados na construção e operação da estação meteorológica. 
+## Materials and Methods
 
-### Caracterização do sistema embarcado
+In this project, the BMP280 temperature and pressure sensor was not used due to material usage issues. However, the hardware and software allow its use for integration into the weather station.
 
-- [**ESP32**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/ESP32): Um módulo microcontrolador com Wi-Fi e Bluetooth integrados, ideal para aplicações IoT.
-- [**DHT11**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/DHT11): Sensor de temperatura e umidade, usado para medições ambientais básicas.
-- [**Pluviômetro**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Pluviometro): Dispositivo utilizado para medir a quantidade de precipitação.
-- [**Anemômetro Arduino SV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Anemometro): Sensor utilizado para medir a velocidade do vento.
-- [**Indicador de direção do vento Arduino DV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Ind_Direcao_Vento): Sensor utilizado para determinar a direção do vento.
+This section describes in detail the components and processes used in the construction and operation of the weather station.
 
-### Diagrama dos componentes
+---
 
-O diagrama abaixo define a configuração física utilizada e a interconexão dos componentes da estação meteorológica: 
+### Characterization of the Embedded System
+
+- [**ESP32**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/ESP32): A microcontroller module with integrated Wi-Fi and Bluetooth, ideal for IoT applications.
+- [**DHT11**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/DHT11): Temperature and humidity sensor, used for basic environmental measurements.
+- [**Pluviometer**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Pluviometro): A device used to measure the amount of precipitation.
+- [**Anemometer Arduino SV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Anemometro): A sensor used to measure wind speed.
+- [**Wind Direction Indicator Arduino DV10**](https://github.com/cyberdebb/estacao_meteorologica/blob/main/sensores/Ind_Direcao_Vento): A sensor used to determine wind direction.
+
+> The Anemometer and the Wind Direction Indicator for Weather Station are usually found together: Anemometer + Wind Direction Indicator for Weather Station - SVDV10
+---
+
+### Component Diagram
+
+The diagram below defines the physical configuration used and the interconnection of the components of the weather station:
 ![Diagrama PI_Grande](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/c75c16e5-882f-4b96-8760-c9f6ee9439b8)
 
 ![Imagem do WhatsApp de 2024-06-15 à(s) 17 48 53_0760c21e](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/a055155b-81d3-48e2-a00d-33777d665640)
 
-### Configuração de Ambiente Local
-Para configurar o ambiente local, siga os passos abaixo. Este arquivo deve conter informações sensíveis como SSID e senha da rede WiFi, além da URL do servidor:
+---
 
-1. Navegue até a pasta `main` do seu projeto e crie um arquivo chamado `settings.h`.
-2. Adicione as seguintes linhas ao arquivo:
+### Local Environment Configuration
+To configure the local environment, follow the steps below. This file should contain sensitive information such as the SSID and password of the WiFi network, as well as the server URL:
+
+1. Navigate to the `main` folder of your project and create a file called `settings.h`.
+2. Add the following lines to the file:
    
-   ```
+   ```cpp
    const char* ssid = "SeuSSID";  // Substitua pelo SSID da sua rede
    const char* password = "SuaSenha";  // Substitua pela senha da sua rede
    String serverURL = "URLDoSeuServidor"; // Substitua pela URL do seu servidor
    ```
 
-### Configuração do ESP32
+---
 
-#### Instalação do Driver para o ESP32
+### Installing the Driver for the ESP32
 
-1. **Baixe e Instale o Driver:**
+1. **Download and Install the Driver:**
+    - Before connecting the ESP32 to your computer, you need to install the appropriate driver to ensure the device is recognized correctly. You can find the specific driver for the ESP32 at the following link: [Installing the Driver for ESP32 - RoboCore](https://www.robocore.net/tutoriais/instalando-driver-do-nodemcu)
+    - Follow the instructions on the website to download and install the driver that corresponds to your operating system.
 
-    - Antes de conectar o ESP32 ao seu computador, é necessário instalar o driver adequado para garantir que o dispositivo seja reconhecido corretamente. Você pode encontrar o driver específico para o ESP32 no seguinte link: [Instalação do Driver para ESP32 - RoboCore](https://www.robocore.net/tutoriais/instalando-driver-do-nodemcu)
-    - Siga as instruções no site para baixar e instalar o driver correspondente ao seu sistema operacional.
+2. **Connecting the ESP32 to the Computer:**
+    - After installing the driver, connect the ESP32 to your computer using a USB cable. If everything is correct, the device should be recognized and a new COM port will be listed in your system.
 
-2. **Conectar o ESP32 ao Computador:**
+---
 
-    - Após a instalação do driver, conecte o ESP32 ao computador usando um cabo USB. Se tudo estiver correto, o dispositivo deverá ser reconhecido e uma nova porta COM será listada no seu sistema.
+### Configuration in the Arduino IDE
 
-#### Configuração no Arduino IDE
+1. **Install the Arduino IDE:**
+    - If you haven't already installed it, download and install the Arduino IDE directly from the official website: [Arduino - Software](https://www.arduino.cc/en/software)
 
-3. **Instale o Arduino IDE:**
-
-    - Se ainda não instalou, baixe e instale o Arduino IDE diretamente do site oficial: [Arduino - Software](https://www.arduino.cc/en/software)
-
-4. **Adicione a URL de Gerenciamento de Placas do ESP32:**
-
-    - Abra o Arduino IDE.
-    - Vá em **Arquivo > Preferências**.
-    - No campo "URLs Adicionais de Gerenciadores de Placas", adicione a seguinte URL para permitir a instalação do pacote do ESP32:
+2. **Add the ESP32 Board Management URL:**
+    - Open the Arduino IDE.
+    - Go to **File > Preferences**.
+    - In the "Additional Board Manager URLs" field, add the following URL to allow installation of the ESP32 package:
 
 		```
 		https://dl.espressif.com/dl/package_esp32_index.json
 		```
 
-5. **Instale o Pacote do ESP32:**
+3. **Install the ESP32 Package:**
+	- Go to **Tools > Board: > Board Manager**.
+	- In the search bar, type "ESP32".
+	- Locate "esp32 by Espressif Systems" and click "Install".
 
-    - Acesse **Ferramentas > Placa: > Gerenciador de Placas**.
-    - Na barra de pesquisa, digite "ESP32".
-    - Localize "esp32 by Espressif Systems" e clique em "Instalar".
+4. **Select the ESP32 Board and COM Port:**
+	- After installing the package, go to **Tools > Board** and select your ESP32 model from the list under the title "ESP32-WROOM-DA Module".
+	- Go to **Tools > Port** and select the COM port that appears (associated with the ESP32).
 
-6. **Selecionar a Placa ESP32 e a Porta COM:**
+---
 
-    - Após a instalação do pacote, vá em **Ferramentas > Placa** e selecione o modelo do seu ESP32 na lista sob o título "ESP32-WROOM-DA Module".
-    - Vá em **Ferramentas > Porta** e selecione a porta COM que aparece (associada ao ESP32).
+### Installing the necessary libraries in the Arduino IDE
 
-### Instalação das bibliotecas necessárias no Arduino IDE
-
-Para instalar todas as bibliotecas necessárias, abra o Arduino IDE, vá em Sketch > Incluir Biblioteca > Gerenciar Bibliotecas, e procure e instale as seguintes bibliotecas:
-
+To install all the necessary libraries, open the Arduino IDE, go to Sketch > Include Library > Manage Libraries, and search for and install the following libraries:
 - Adafruit BMP280 Library by Adafruit
 - Adafruit BusIO by Adafruit
 - Adafruit Unified Sensor by Adafruit
 - ArduinoJson by Benoit
 - DHT sensor library by Adafruit
 
-### Descrição dos Problemas e Soluções 
+---
 
-#### Problemas com a memória flash do esp32
+### Problem Description and Solutions
 
-**Descrição do Problema:** Às vezes, pode ser necessário apagar a memória flash do ESP32 para resolver problemas de estabilidade ou falhas ao carregar novos programas. Esse procedimento torna-se essencial especialmente se o botão de reset físico (RST) não estiver funcionando, impedindo um reinício suave do dispositivo.
+Problems with the ESP32 Flash Memory: Sometimes, it may be necessary to erase the ESP32's flash memory to resolve stability issues or failures when loading new programs. This procedure becomes essential especially if the physical reset button (RST) is not working, preventing a soft restart of the device.
 
-**Solução:**
+**Solution:**
 
-1. **Instalar a Biblioteca esptool:** O esptool é uma ferramenta em linha de comando que permite a comunicação com o chipset ESP para apagar ou gravar a memória flash.
+1. **Install the esptool Library:** esptool is a command-line tool that allows communication with the ESP chipset to erase or write to the flash memory.
+	- Install esptool using pip, the Python package manager:
 
-	 - Instale o esptool usando o pip, o gerenciador de pacotes Python:
-
-		```
+		```sh
 		 pip install esptool
 		```  
 
-2. **Apagar a Memória Flash:** Para apagar completamente a memória flash do ESP32, siga os passos abaixo. Este processo é útil para limpar configurações antigas que podem estar causando conflitos.
+2. **Erase the Flash Memory:** To completely erase the ESP32's flash memory, follow the steps below. This process is useful for clearing old settings that may be causing conflicts.
+	- Open the terminal or command prompt.
+	- Run the following command to erase the flash memory:
 
-    - Abra o terminal ou prompt de comando.
-    - Execute o seguinte comando para apagar a memória flash:
-
-		```
+		```sh
 		python -m esptool --chip esp32 erase_flash
 		```
 
-3. **Verificação de Sucesso:**
+3. **Success Verification:**
+	- After erasing the flash memory, reconnect the ESP32 to your computer and try loading a new program. If the program loads and runs correctly, this indicates that the memory was successfully erased.
 
-    - Após apagar a memória flash, reconecte o ESP32 ao seu computador e tente carregar um novo programa. Se o programa carregar e executar corretamente, isso indica que a memória foi apagada com sucesso.
+---
 
-### Foto da montagem física
+## Photo of the Physical Connection
 ![IMG_2254](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/c5bda040-61ea-4b4f-9dab-8303a7e4922a)
 
-### Vídeo do sistema funcionando
-Este vídeo demonstra a operação da estação meteorológica, enfocando a coleta e o registro de dados em tempo real:
-https://youtu.be/Y84vYU7VSpE
+---
 
-### Orçamento
-O levantamento dos preços de cada componente foi realizado através de pesquisa na internet, consultando sites especializados na venda de componentes eletrônicos como: Amazon, Eletrogate e Usinainfo. Como referência, o orçamento foi levantado em junho/2024. Todos os componentes utilizados na construção da estação e descritos na subseção de caracterização do sistema embarcado estão compilados na tabela:
+## Video of the System Working
+This video demonstrates the operation of the weather station, focusing on the collection and recording of data in real time: <br>
 
-| Componente                                                                           | Preço    | Fonte      |
+[![Vídeo](https://img.youtube.com/vi/Y84vYU7VSpE/0.jpg)](https://www.youtube.com/watch?v=Y84vYU7VSpE)
+
+---
+
+## Budget
+The price survey for each component was conducted through internet research in Brazil, consulting websites specializing in the sale of electronic components such as Amazon, Eletrogate, and Usinainfo. For reference, the budget was compiled in June 2024. All components used in the construction of the station and described in the embedded system characterization subsection are compiled in the table:
+
+| Components                                                                           | Price    | Source      |
 | ------------------------------------------------------------------------------------ | -------- | ---------- |
 | ESP32	                                                                               | R$49.90  | Amazon     |
 | DHT11                                                                                | R$10.36  | Eletrogate |
