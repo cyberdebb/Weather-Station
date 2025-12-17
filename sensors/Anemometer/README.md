@@ -1,61 +1,59 @@
-# Anemômetro Arduino SV10
+# Arduino SV10 Anemometer
 ![image-removebg-preview](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/e26fc378-fd3a-42bb-86ed-dd05aaa47658)
 
-O Anemômetro Arduino é um equipamento eletrônico, também conhecido com sensor de vento, que foi desenvolvido com a finalidade de medir a velocidade do vento em projetos envolvendo plataformas microcontroladoras, entre elas, o Arduino e o Raspberry Pi.
+The Arduino Anemometer is an electronic device, also known as a wind sensor, developed to measure wind speed in projects involving microcontroller platforms such as Arduino and Raspberry Pi.
 
-Ele é do tipo copo (caneca), possuindo excelente desempenho para medir o vento, além de maior resistência a agentes externos, já que os copos são produzidos em alumínio de alta durabilidade.
+It is a cup-type anemometer, offering excellent performance for wind measurement, as well as greater resistance to external agents, since the cups are made of high-durability aluminum.
 
-A conexão junto ao sistema microcontrolador é simples, já que conta com apenas 2 fios, podendo ser instalado eletricamente de 3 modos diferentes (esquemas de ligação disponíveis para download abaixo), devendo ser conectado na entrada digital do microcontrolador.
+The connection to the microcontroller system is simple, as it uses only two wires and can be electrically installed in three different ways (wiring diagrams available for download below). It must be connected to a digital input of the microcontroller.
 
-Muito funcional, o Anemômetro Arduino Fixo é aplicado em estufas, áreas de proteção ambiental monitoradas, estações meteorológicas, portos, áreas agrícolas, entre outros ambientes.
+Highly functional, the fixed Arduino Anemometer is used in greenhouses, monitored environmental protection areas, weather stations, ports, agricultural areas, among other environments.
 
-Os parâmetros de funcionamento são amplos, já que o sensor de vento consegue fazer a leitura da velocidade do vento de 0 a 33,33 m/s, isso mesmo, incríveis 120 km/h.
+Its operating parameters are wide, as the wind sensor can measure wind speeds from 0 to 33.33 m/s — that’s right, an impressive 120 km/h.
 
-Permite fixar um tubo de até 35mm em seu suporte para fixação.
+It allows mounting on a tube with a diameter of up to 35 mm using its fixing support.
 
-Conta ainda com alta precisão e boa estabilidade já sendo calibrado de fábrica, possuindo sensor reed switch e forte nível de proteção anti-interferência, pronto para ser conectado ao arduino.
+It also features high precision and good stability, comes factory-calibrated, includes a reed switch sensor, and provides a strong level of anti-interference protection, making it ready to be connected directly to Arduino.
 
-## Características
-- Anemômetro Arduino Fixo;  
-- Sensor de velocidade do vento;  
-- Pode ser utilizado com outros microcontroladores;
-- Eixo com rolamento lacrado (livre de manutenção);  
-- Possui três copos em alumínio;  
-- Sensor magnético lacrado;  
-- Tipo copo (caneca);  
-- Fácil instalação;  
-- Alta precisão;  
-- Boa estabilidade;  
-- Linearidade de dados;  
-- Forte proteção anti-interferência;  
-- Abraçadeira para fixação;  
-- Ideal para estufas, áreas de proteção ambiental monitoradas, estações meteorológicas, portos, áreas agrícolas, entre outros ambientes;
+## Features
+- Fixed Arduino Anemometer;  
+- Wind speed sensor;  
+- Can be used with other microcontrollers;  
+- Shaft with sealed bearing (maintenance-free);  
+- Three aluminum cups;  
+- Sealed magnetic sensor;  
+- Cup-type anemometer;  
+- Easy installation;  
+- High precision;  
+- Good stability;  
+- Data linearity;  
+- Strong anti-interference protection;  
+- Clamp for mounting;  
+- Ideal for greenhouses, monitored environmental protection areas, weather stations, ports, agricultural areas, among other environments;
 
-## Especificações
-| INFORMAÇÃO                        | Anemômetro Arduino SV10 |
-| --------------------------------- | ----------------------- |
-| MATERIAL                          | Alumínio                |
-| TENSÃO DE TRABALHO                | 5V DC                   |
-| TIPO                              | Digital                 |
-| MEDIÇÃO MÁXIMA                    | 120 Km/h                |
-| MEIO DE TRANSMISSÃO               | cabo                    |
-| TEMPERATURA DE TRABALHO           | -40C ~ 80C              |
-| COMPRIMENTO DO CABO               | ~5 metros               |
-| COMPRIMENTO SUPORTE               | 205mm                   |
-| DIÂMETRO DO COPO                  | 50mm                    |
-| DIÂMETRO MÁXIMO TUBO PARA FIXAÇÃO | 35mm                    |
-| DIMENSÕES TOTAIS (CxA)            | ~30x12cm                |
-| PESO                              | 330g                    |
-| PESO COM EMBALAGEM                | 400g                    |
+## Specifications
+| INFORMATION                        | Arduino SV10 Anemometer |
+| ---------------------------------- | ----------------------- |
+| MATERIAL                           | Aluminum                |
+| OPERATING VOLTAGE                  | 5V DC                   |
+| TYPE                               | Digital                 |
+| MAXIMUM MEASUREMENT                | 120 km/h                |
+| TRANSMISSION MEDIUM                | Cable                   |
+| OPERATING TEMPERATURE              | -40°C ~ 80°C            |
+| CABLE LENGTH                       | ~5 meters               |
+| SUPPORT LENGTH                     | 205 mm                  |
+| CUP DIAMETER                       | 50 mm                   |
+| MAXIMUM TUBE DIAMETER FOR MOUNTING | 35 mm                   |
+| TOTAL DIMENSIONS (L×H)             | ~30 × 12 cm             |
+| WEIGHT                             | 330 g                   |
+| WEIGHT WITH PACKAGING              | 400 g                   |
 
-## Conexões
-| Anemômetro | ESP WROOM 32 | Número Do Pino ESP32 |
-|:----------:|:------------:|:--------------------:|
-|     VCC    |      5V      |          5V          |
-|     GND    |      GND     |          GND         |
-|     DAT    |     GPIO     |         GPIO2        |
+## Connections
+| Anemometer | ESP WROOM 32 | ESP32 Pin Number |
+|:----------:|:------------:|:---------------:|
+|     VCC    |      5V      |       5V        |
+|     GND    |      GND     |       GND       |
+|     DAT    |     GPIO     |     GPIO2       |
 
-## Resultados
-![Imagem do WhatsApp de 2024-06-18 à(s) 14 16 09_2e3559ec](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/cfbaa72c-4411-4631-bd06-5f65ef79847e)
-
-
+## Results
+![WhatsApp Image from 2024-06-18 at 14:16:09_2e3559ec](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/cfbaa72c-4411-4631-bd06-5f65ef79847e)
