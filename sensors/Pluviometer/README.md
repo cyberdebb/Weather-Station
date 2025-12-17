@@ -1,4 +1,4 @@
-# Weather Station Rain Gauge V2
+# Weather Station Rain Gauge (Pluviometer) V2
 ![image-removebg-preview (6)](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/1f387b13-7fc2-4eb4-ab38-0ad2a61a9cc9)
 
 This rain gauge is designed to measure rainfall amount and includes:
@@ -11,7 +11,7 @@ This rain gauge is designed to measure rainfall amount and includes:
 - A drop of glue to secure the magnet.
 
 The rain gauge was 3D printed using the following files:  
-[Pluviometro Gcode's.zip](https://github.com/user-attachments/files/15755285/Pluviometro.Gcode.s.zip)
+[Pluviometer Gcode's.zip](https://github.com/user-attachments/files/15755285/Pluviometro.Gcode.s.zip)
 
 The funnel is attached to the base through a printed thread, using Aubend's Poor Man’s OpenSCAD thread library  
 ([https://www.thingiverse.com/thing:8796](https://www.thingiverse.com/thing:8796)).  
