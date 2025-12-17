@@ -1,18 +1,18 @@
 # BMP280
 ![image-removebg-preview (1)](https://github.com/cyberdebb/estacao_meteorologica/assets/107296659/a9135a6b-2431-4162-872f-95bb2dccbf72)
 
-O [Sensor De Pressão e Temperatura Bmp280](https://datasheets.eletrogate.com/BMP280.pdf) é a versão mais nova do BMP180. Possui ganhos em termos de precisão e consumo de energia, além do tamanho 63% menor, tornando comum o seu uso em dispositivos móveis e portáteis.
+The [BMP280 Pressure and Temperature Sensor](https://datasheets.eletrogate.com/BMP280.pdf) is the newest version of the BMP180. It provides improvements in terms of accuracy and power consumption, in addition to being 63% smaller, which makes it widely used in mobile and portable devices.
 
-Este módulo possui um sensor de temperatura embutido, reduzindo o número de componentes e conexões necessárias ao seu projeto, além disso, funciona com interfaces I2C ou SPI e tensão de 3V, sendo que o baixo consumo de energia permite o funcionando por longos períodos com alimentação por bateria, e é indicado para projetos como drones, estações meteorológicas, dispositivos com GPS, relógios, etc.
+This module features a built-in temperature sensor, reducing the number of components and connections required in your project. In addition, it operates using I2C or SPI interfaces and a 3 V supply voltage. Its low power consumption allows long-term operation when powered by batteries, making it suitable for projects such as drones, weather stations, GPS-enabled devices, watches, and more.
 
-**ESPECIFICAÇÕES:**
-| INFORMAÇÃO               | BMP280                                                            |
-| ------------------------ | ----------------------------------------------------------------- |
-| TENSÃO DE OPERAÇÃO       | 3V                                                                |
-| CONSUMO DE CORRENTE      | 2.7µA                                                             |
-| INTERFACES               | I2C e SPI                                                         |
-| FAIXA DE MEDIÇÃO PRESSÃO | 300 – 1100hPa (equiv. +9000 à -500m acima/abaixo do nível do mar) |
-| PRECISÃO                 | ±0.12hPa (equiv. ±1m)                                             |
-| FAIXA DE TEMPERATURA     | -40 à 85 °C                                                       |
-| PRECISÃO TEMPERATURA     | ±1.0 °C                                                           |
-| DIMENSÕES                | 15 x 12 x 2,3mm (sem os pinos)                                    |
+## Specifications
+| INFORMATION              | BMP280                                                             |
+| ------------------------ | ------------------------------------------------------------------ |
+| OPERATING VOLTAGE        | 3 V                                                                |
+| CURRENT CONSUMPTION      | 2.7 µA                                                             |
+| INTERFACES               | I2C and SPI                                                        |
+| PRESSURE MEASUREMENT RANGE | 300 – 1100 hPa (equiv. +9000 to -500 m above/below sea level) |
+| PRESSURE ACCURACY        | ±0.12 hPa (equiv. ±1 m)                                            |
+| TEMPERATURE RANGE        | -40 to 85 °C                                                       |
+| TEMPERATURE ACCURACY     | ±1.0 °C                                                           |
+| DIMENSIONS               | 15 × 12 × 2.3 mm (without pins)                                    |
